@@ -1,0 +1,7 @@
+torch == 1.2.0
+numpy
+open3d == 0.10.0
+opencv-python
+terminaltables
+pycocotools
+scipy
