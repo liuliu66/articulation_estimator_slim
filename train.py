@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument('--n_max_parts', default=13, type=int, help='use rgb as point feature')
     parser.add_argument('--distributed', action='store_true', help='distributed training or test')
     parser.add_argument('--local_rank', type=int, default=0)
-    parser.add_argument('--num_gpus', type=int, default=4)
+    parser.add_argument('--num_gpus', type=int, default=1)
     args = parser.parse_args()
 
     return args
@@ -31,7 +31,7 @@ def main():
     else:
         in_channels = 3
     # num_gpus = int(os.environ["WORLD_SIZE"]) if "WORLD_SIZE" in os.environ else 1
-    num_gpus = 4
+    num_gpus = args.num_gpus
     args.distributed = num_gpus > 1
 
     output_dir = 'output'
