@@ -25,9 +25,9 @@ class ArticulationEstimator(nn.Module):
             return self.forward_test(**input)
 
     def forward_train(self, **input):
-        P = input['pts']
-        if 'pts_feature' in input.keys():
-            P_feature = input['pts_feature']
+        P = input['parts_pts']
+        if 'parts_pts_feature' in input.keys():
+            P_feature = input['parts_pts_feature']
         else:
             P_feature = None
 

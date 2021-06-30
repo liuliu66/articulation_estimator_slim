@@ -13,7 +13,7 @@ from visualization import vis_pose
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='MMDet test detector')
+    parser = argparse.ArgumentParser(description='Articulation test Estimator')
     parser.add_argument('checkpoint', help='checkpoint file')
     parser.add_argument('data_dir', help='demo data directory')
     parser.add_argument('det_bbox_file', help='detected bounding box file')

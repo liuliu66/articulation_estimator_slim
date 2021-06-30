@@ -2,6 +2,7 @@ import os, sys
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from .losses import MIoULoss, NOCSLoss, VECTLoss
 
@@ -159,17 +160,23 @@ class EstimationHead(nn.Module):
                                                pred_dict['confi_per_point'],
                                                mask_array=input['mask_array'])
 
+        joint_cls_one_hot = F.one_hot(input['joint_cls'].squeeze(-1).long(), self.n_max_parts).type_as(input['joint_cls_mask'])
+
         heatmap_loss = self.loss_vect(pred_dict['heatmap_per_point'],
-                                              input['offset_heatmap'].squeeze(),
-                                              confidence=input['joint_cls_mask'].squeeze(-1))
+                                              input['offset_heatmap'],
+                                              confidence=input['joint_cls_mask'].squeeze(-1),
+                                              mask_array=joint_cls_one_hot)
 
         unitvec_loss = self.loss_vect(pred_dict['unitvec_per_point'],
                                               input['offset_unitvec'],
-                                              confidence=input['joint_cls_mask'].squeeze(-1))
+                                              confidence=input['joint_cls_mask'].squeeze(-1),
+                                              mask_array=joint_cls_one_hot)
 
         orient_loss = self.loss_vect(pred_dict['joint_axis_per_point'],
                                              input['joint_orient'],
-                                             confidence=input['joint_cls_mask'].squeeze(-1))
+                                             confidence=input['joint_cls_mask'].squeeze(-1),
+                                             mask_array=joint_cls_one_hot)
+
 
         J_gt = input['joint_cls'].squeeze(-1)
         inds_pred = pred_dict['index_per_point']

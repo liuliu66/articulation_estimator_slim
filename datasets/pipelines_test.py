@@ -12,6 +12,9 @@ PART_CLASSES = {'box': ['BG', 'base_link', 'link1'],
                 'drawer': ['BG', 'base_link', 'link1', 'link2', 'link3'],
                 'scissor': ['BG', 'link1', 'link2']}
 
+epsilon = 10e-8
+thres_r = 0.2
+
 
 def rgbd2pc(rgb_path, depth_path, camera_intrinsic):
     rgb_path = o3d.geometry.Image(rgb_path)

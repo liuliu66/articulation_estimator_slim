@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="24000">
+  <component name="PublishConfigData" autoUpload="Always" serverName="liuliu@24000">
     <serverData>
-      <paths name="21600">
+      <paths name="&lt;liuliu&gt;@&lt;robot02&gt;:&lt;22&gt;">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="22200">
+      <paths name="liuliu@24000">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="23000">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="24000">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/home/liuliu/articulation_estimator_slim" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/liuliu/articulation_estimator_slim" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

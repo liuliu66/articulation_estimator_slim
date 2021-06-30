@@ -10,9 +10,9 @@ class MIoULoss(nn.Module):
         super(MIoULoss, self).__init__()
 
     def forward(self, W, I_gt, matching_indices=None):
-        W_reordered = W
+        W_reordered = W.permute(0, 2, 1)
 
-        depth = W.shape[2]
+        depth = W_reordered.shape[2]
         W_gt = F.one_hot(I_gt.long(), num_classes=depth).float()
         dot = torch.sum(W_gt * W_reordered, 1)
         denominator = torch.sum(W_gt, 1) + torch.sum(W_reordered, 1) - dot

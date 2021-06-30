@@ -1,6 +1,7 @@
 import os
 from collections import OrderedDict
 from terminaltables import AsciiTable
+import six
 
 import torch
 
@@ -107,3 +108,58 @@ def load_checkpoint(model,
     else:
         load_state_dict(model, state_dict, strict, logger)
     return checkpoint
+
+
+def weights_to_cpu(state_dict):
+    """Copy a model state_dict to cpu.
+
+    Args:
+        state_dict (OrderedDict): Model weights on GPU.
+
+    Returns:
+        OrderedDict: Model weights on GPU.
+    """
+    state_dict_cpu = OrderedDict()
+    for key, val in state_dict.items():
+        state_dict_cpu[key] = val.cpu()
+    return state_dict_cpu
+
+
+def save_checkpoint(model, filename, optimizer=None, meta=None):
+    """Save checkpoint to file.
+
+    The checkpoint will have 3 fields: ``meta``, ``state_dict`` and
+    ``optimizer``. By default ``meta`` will contain version and time info.
+
+    Args:
+        model (Module): Module whose params are to be saved.
+        filename (str): Checkpoint filename.
+        optimizer (:obj:`Optimizer`, optional): Optimizer to be saved.
+        meta (dict, optional): Metadata to be saved in checkpoint.
+    """
+    if meta is None:
+        meta = {}
+    elif not isinstance(meta, dict):
+        raise TypeError('meta must be a dict or None, but got {}'.format(
+            type(meta)))
+
+    if filename == '':
+        return
+    # dir_name = os.path.expanduser(filename)
+    # if six.PY3:
+    #     os.makedirs(dir_name, mode=0o777, exist_ok=True)
+    # else:
+    #     if not os.path.isdir(dir_name):
+    #         os.makedirs(dir_name, mode=0o777)
+    if hasattr(model, 'module'):
+        model = model.module
+
+    checkpoint = {
+        'meta': meta,
+        'state_dict': weights_to_cpu(model.state_dict())
+    }
+    if optimizer is not None:
+        checkpoint['optimizer'] = optimizer.state_dict()
+
+    torch.save(checkpoint, filename)
+
