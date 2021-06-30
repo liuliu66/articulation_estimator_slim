@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da086b7-2354-45e2-a349-5d594360362c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datasets/articulation_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/batch_collator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/pipelines_train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datasets/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/lr_scheduler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/pipelines_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/articulation_estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/articulation_estimator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/estimation_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/estimation_head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/losses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/checkpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checkpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +221,7 @@
       <workItem from="1621929216533" duration="26018000" />
       <workItem from="1622707053592" duration="3752000" />
       <workItem from="1623043543810" duration="612000" />
-      <workItem from="1625027655347" duration="15289000" />
+      <workItem from="1625027655347" duration="15510000" />
     </task>
     <servers />
   </component>

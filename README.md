@@ -10,6 +10,16 @@ $ pip install -r requirements.txt
 
 ## usage
 
+# train
+
+```
+$ python train.py
+```
+
+please refer to the dataset structure in 'data' folder.
+
+# inference
+
 ```
 $ python test.py checkpoints/checkpoint.pth demo demo/det_bboxes.json
 ```
