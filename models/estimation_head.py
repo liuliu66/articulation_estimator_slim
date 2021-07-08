@@ -94,7 +94,7 @@ class EstimationHead(nn.Module):
             scale_per_points = torch.sigmoid(scale_per_points)
             trans_per_points = torch.tanh(trans_per_points)
 
-        if self.loss_miou._get_name() == 'Arti_MIoU_Loss':
+        if self.loss_miou._get_name() == 'MIoULoss':
             W = torch.softmax(W, dim=2)  # BxNxK # maximum
         confi_per_points = torch.sigmoid(confi_per_points)
         nocs_per_points = torch.sigmoid(nocs_per_points)  # BxNx3
@@ -108,7 +108,7 @@ class EstimationHead(nn.Module):
         heatmap = torch.sigmoid(heatmap)
         unitvec = torch.tanh(unitvec)
         joint_axis = torch.tanh(joint_axis)
-        if self.loss_miou._get_name() == 'Arti_MIoU_Loss':
+        if self.loss_miou._get_name() == 'MIoULoss':
             joint_cls = torch.softmax(joint_cls, dim=2)
 
         pred = {
@@ -144,7 +144,7 @@ class EstimationHead(nn.Module):
 
         I_gt = input['parts_cls'].squeeze(-1)  # BxN
 
-        if self.loss_miou._get_name() == 'Arti_MIoU_Loss':
+        if self.loss_miou._get_name() == 'MIoULoss':
             miou_loss = self.loss_miou(W, I_gt)
         else: # use cross entropy
             miou_loss = self.loss_miou(W.permute(0, 2, 1), I_gt.long())
@@ -180,7 +180,7 @@ class EstimationHead(nn.Module):
 
         J_gt = input['joint_cls'].squeeze(-1)
         inds_pred = pred_dict['index_per_point']
-        if self.loss_miou._get_name() == 'Arti_MIoU_Loss':
+        if self.loss_miou._get_name() == 'MIoULoss':
             miou_joint_loss = self.loss_miou(inds_pred, J_gt)[:, :-1]
         else: # use cross entropy
             miou_joint_loss = self.loss_miou(inds_pred.permute(0,2,1), J_gt.long())

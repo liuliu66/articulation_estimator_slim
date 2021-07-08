@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7da086b7-2354-45e2-a349-5d594360362c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/pipelines_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/pipelines_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/estimation_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/estimation_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/losses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.test">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="articulation_estimator_slim" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,7 +223,8 @@
       <workItem from="1621929216533" duration="26018000" />
       <workItem from="1622707053592" duration="3752000" />
       <workItem from="1623043543810" duration="612000" />
-      <workItem from="1625027655347" duration="15685000" />
+      <workItem from="1625027655347" duration="16377000" />
+      <workItem from="1625567017122" duration="8565000" />
     </task>
     <servers />
   </component>
@@ -295,9 +298,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/articulation_estimator_slim$train.coverage" NAME="train Coverage Results" MODIFIED="1625058320551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/articulation_estimator_slim$train.coverage" NAME="train Coverage Results" MODIFIED="1625728851710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/articulation_estimator_slim$test.coverage" NAME="test Coverage Results" MODIFIED="1625729544612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vis.py" />

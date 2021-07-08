@@ -267,7 +267,7 @@ class LoadArtiJointData(object):
                     offset_arr = point_3d_offset_joint([joint_P0, joint_l], results['nocs_g'][j])
                 parts_offset_joint[j].append(offset_arr)
                 parts_joints[j].append([joint_P0, joint_l])
-                joint_index[j].append(results['parts_parent_joint'][j] - 1)
+                joint_index[j].append(results['parts_parent_joint'][j])
                 # plot_arrows(results['nocs_g'][j], offset_arr, [joint_P0, joint_l], title_name='NOCS {} to joint {}'.format(j, j))
 
             if results['parts_child_joint'][j] is not None:
@@ -283,7 +283,7 @@ class LoadArtiJointData(object):
                         offset_arr = point_3d_offset_joint([joint_P0, joint_l], results['nocs_g'][j])
                     parts_offset_joint[j].append(offset_arr)
                     parts_joints[j].append([joint_P0, joint_l])
-                    joint_index[j].append(m-1)
+                    joint_index[j].append(m)
                     # plot_arrows(results['nocs_g'][j], offset_arr, [joint_P0, joint_l], title_name='NOCS {} to joint {}'.format(j, m))
 
         results['parts_offset_joint'] = parts_offset_joint

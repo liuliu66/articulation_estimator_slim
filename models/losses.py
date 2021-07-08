@@ -10,7 +10,7 @@ class MIoULoss(nn.Module):
         super(MIoULoss, self).__init__()
 
     def forward(self, W, I_gt, matching_indices=None):
-        W_reordered = W.permute(0, 2, 1)
+        W_reordered = W
 
         depth = W_reordered.shape[2]
         W_gt = F.one_hot(I_gt.long(), num_classes=depth).float()
